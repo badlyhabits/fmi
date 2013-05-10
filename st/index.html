@@ -4,19 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Софтуерни Технологии</title>
-<style>
-html, body, div, p, header, form, input{ margin:0; padding:0; display:block; }
-html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; margin:0; padding:0; }
-body { margin:0; padding:0; font:400 15px/18px arial, sans-serif; background:#ebebeb;}
-p{ margin:10px 7px; padding:5px; color:#000; background:#58cb9e; border-radius:5px; }
-p > span { display:block; background: rgba(0,0,0,0.25); border-radius: 5px; padding: 2px 5px; color: #fff; }
-p:nth-child(even){ background:#51ccff;}
-#search-submit{ display: none; }
-#search{ width:98%; margin: 5px 1%; padding:15px 5px; height: 25px; color:#444; font:400 16px/normal arial, sans-serif; box-sizing: border-box; border:1px solid #abadb3; border-radius: 3px; }
-h1,h2{ font:400 20px/40px sans-serif; border-bottom: 4px solid #444; margin: 0 7px 20px; }
-h2 { font-size: 17px; }
-.dn { display: none; }
-</style>
+<link rel="stylesheet" href="../style.css" />
 </head>
 <body>
 <div id="header">
@@ -25,7 +13,8 @@ h2 { font-size: 17px; }
 		<input id="search" placeholder="search" type="text" />
 		<input id="search-submit" value="search" type="submit" />
 	</form>
-</div>
+</div><!-- #header -->
+
 <div id="content">
 
 <h2>Тест 1.1</h2>
@@ -166,33 +155,7 @@ h2 { font-size: 17px; }
 
 </div><!-- #content -->
 
-<script>
-;(function() {
-	var nodes = document.getElementById("content").getElementsByTagName("p"),
-		nodesLen = nodes.length,
-		search = document.getElementById("search"),
-		submit = document.getElementById("search-submit"),
-		i, data;
-	
-	function preventSubmit(e) {
-		e.preventDefault();
-	}
-	
-	function keyupSearch(e) {
-		var that = this;
-		data = that.value.toLowerCase();
-		
-		for (i = 0; i < nodesLen; i++) { 
-			nodes[i].className = "dn";
-			if (nodes[i].textContent.toLowerCase().indexOf(data) !== -1) {
-				nodes[i].className = "";
-			}
-		}
-	}
-	
-	submit.addEventListener("click", preventSubmit, false);
-	search.addEventListener("keyup", keyupSearch, false);
-})();
-</script>
+<script src="../search.js"></script>
 </body>
 </html>
+
